@@ -1,22 +1,26 @@
 <template>
   <div>
-      <p>{{ itemInfo.title }}</p>
-      <p>{{ itemInfo.content }}</p>
-      <!-- <p>{{this.$store.state.item.comments}}</p> -->
+    <section>
+
+    </section>
+    <section>
+      
+    </section>
+    <p>{{ fetchedItem.title }}</p>
+    <div>{{ fetchedItem.content }}</div>
+    <!-- <p>{{this.$store.state.item.comments}}</p> -->
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+import { mapGetters } from 'vuex';
 
 export default {
   computed: {
-    itemInfo(){
-      return this.$store.state.item;
-    }
+    ...mapGetters(['fetchedItem']),
   },
   created(){
-    const itemId = this.$route.query.id;
+    const itemId = this.$route.params.id;
     console.log( 'itemId : ', itemId )
     // axios.get(`${config.baseUrl}item/${itemId}.json`);
     this.$store.dispatch('FETCH_ITEM', itemId)

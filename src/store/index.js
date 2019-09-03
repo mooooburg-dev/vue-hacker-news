@@ -13,6 +13,11 @@ export const store = new Vuex.Store({
         user: {},
         item: {},
     },
+    getters: {
+        fetchedItem(state){
+            return state.item;
+        }
+    },
     mutations,
     actions,
 })
