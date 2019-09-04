@@ -4,7 +4,9 @@
     <!-- <ToolBar></ToolBar> -->
      <!-- 2 - Essential -->
     <tool-bar></tool-bar>
-    <router-view></router-view>
+    <transition name="page">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -26,5 +28,13 @@ export default {
 body {
   padding: 0;
   margin: 0;
+}
+
+/* 라우터 트랜지션 */
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s;
+}
+.page-enter, .page-leave-to /* .page-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

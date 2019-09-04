@@ -3,7 +3,7 @@ import {
     fetchJobsList,
     fetchAskList,
     fetchUserInfo,
-    fetchCommentItem
+    fetchCommentItem,
 } from '../api/index.js';
 
 export default {
