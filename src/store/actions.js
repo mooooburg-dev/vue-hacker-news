@@ -46,7 +46,7 @@ export default {
     FETCH_ITEM(context, id){
         fetchCommentItem(id)
             .then(response => {
-                console.log(response.data);
+                // console.log(response.data);
                 context.commit('SET_ITEM', response.data)
             })
             .catch(error => {
