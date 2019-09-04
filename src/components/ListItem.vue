@@ -4,22 +4,34 @@
       <li v-for="item in listItems" class="post">
         <!-- 포인트 영역 -->
         <div class="points">
-          {{ item.points }}
+          {{ item.points || 0 }}
         </div>
 
         <!-- 기타 정보 영역 -->
         <div>
-          <p class="news-title">
-            <a v-bind:href="item.url">
-              {{ item.title }}
-            </a>
-          </p>
-          <small class="link-text">
-            by
-            <router-link v-bind:to="`/user/${item.user}`" class="link-text">
-            {{ item.user }}
-          </router-link>
-          </small>
+            <!-- 타이틀 영역 -->
+            <p class="news-title">
+                <template v-if="item.domain">
+                    <a v-bind:href="item.url">
+                        {{ item.title }}
+                    </a>
+                </template>
+                <template v-else>
+                    <router-link v-bind:to="`item/${item.id}`">
+                        {{ item.title }}
+                    </router-link>
+                </template>
+            </p>
+            <small class="link-text">
+                {{ item.time_ago }}
+                by
+                <router-link v-bind:to="`/user/${item.user}`" class="link-text" v-if="item.user">
+                    {{ item.user }}
+                </router-link>
+                <a :href="`http://${item.domain}`" target="_blank" class="link-text" v-else>
+                  {{ item.domain }}
+                </a>
+            </small>
         </div>
       </li>
     </ul>
