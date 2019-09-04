@@ -40,21 +40,21 @@
 
 <script>
 export default {
-    created(){
-        const name = this.$route.name;
-        let fetchType = '';
+    // created(){
+    //     const name = this.$route.name;
+    //     let fetchType = '';
         
-        if(name === 'news'){
-            fetchType = 'FETCH_NEWS';
-        }
-        else if(name === 'ask'){
-            fetchType = 'FETCH_ASK';
-        }
-        else if(name === 'jobs'){
-            fetchType = 'FETCH_JOBS';
-        }
-        this.$store.dispatch(fetchType);
-    },
+    //     if(name === 'news'){
+    //         fetchType = 'FETCH_NEWS';
+    //     }
+    //     else if(name === 'ask'){
+    //         fetchType = 'FETCH_ASK';
+    //     }
+    //     else if(name === 'jobs'){
+    //         fetchType = 'FETCH_JOBS';
+    //     }
+    //     this.$store.dispatch(fetchType);
+    // },
     computed: {
         listItems(){
             const name = this.$route.name;

@@ -5,31 +5,27 @@
           <i class="fas fa-user"></i>
         </div>
         <div class="user-description">
-            
-            <!-- <div>
-                user name : {{ info.id }}
-            </div> -->
-            <slot name="username"></slot>
-            
-            <!-- <router-link :to="`/user/${userInfo.user}`">
-            {{ userInfo.id }}
-            </router-link> -->
+            <slot name="username">
+                <!-- 상위 컴포넌트에서 정의할 영역 -->
+            </slot>
             <div class="time">
-                <!-- time : {{ info.created }} -->
-                <slot name="time"></slot>
+                <slot name="time">
+                    <!-- 상위 컴포넌트에서 정의할 영역 -->
+                </slot>
+                <slot name="karma">
+                    <!-- 상위 컴포넌트에서 정의할 영역 -->
+                </slot>
             </div>
-            <slot name="karma"></slot>
         </div>
       </div>
-      <!-- <h2>{{ info.title }}</h2> -->
   </div>
 </template>
 
 <script>
 export default {
-    props: {
-        info: Object
-    },
+    // props: {
+    //     info: Object
+    // },
 }
 </script>
 
