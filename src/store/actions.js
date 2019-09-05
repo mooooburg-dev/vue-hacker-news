@@ -3,7 +3,7 @@ import {
     // fetchJobsList,
     // fetchAskList,
     fetchList,
-    // fetchUserInfo,
+    fetchUserInfo,
     fetchCommentItem,
 } from '../api/index.js';
 
@@ -36,15 +36,15 @@ export default {
     //             console.log(error);
     //         })
     // },
-    // FETCH_USER(context, name){
-    //     fetchUserInfo(name)
-    //         .then(response => {
-    //             context.commit('SET_USER', response.data)
-    //         })
-    //         .catch(error => {
-    //             console.log(error)
-    //         })
-    // },
+    FETCH_USER(context, name){
+        fetchUserInfo(name)
+            .then(response => {
+                context.commit('SET_USER', response.data)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    },
     FETCH_ITEM(context, id){
         fetchCommentItem(id)
             .then(response => {
