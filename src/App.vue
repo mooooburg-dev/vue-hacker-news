@@ -64,7 +64,7 @@ a.router-link-exact-active {
 
 /* 라우터 트랜지션 */
 .page-enter-active, .page-leave-active {
-  transition: opacity .5s;
+  transition: opacity 0.3s;
 }
 .page-enter, .page-leave-to /* .page-leave-active below version 2.1.8 */ {
   opacity: 0;
